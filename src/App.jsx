@@ -4,12 +4,16 @@ import { LoginRegister } from "./Login/LoginRegister";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Notes />} path="/" />
-          <Route element={<LoginRegister />} path="/login" />
-        </Routes>
-      </BrowserRouter>
+      <div id="app">
+        <div id="container">
+          <BrowserRouter>
+            <Routes>
+              <Route element={<Notes />} path="/" />
+              <Route element={<LoginRegister />} path="/login" />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
     </>
   );
 }

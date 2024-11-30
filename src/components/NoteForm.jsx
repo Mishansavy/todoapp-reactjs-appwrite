@@ -22,7 +22,7 @@ const NoteForm = ({ setNotes }) => {
   };
 
   return (
-    <div className="formdiv">
+    <div id="todo-form">
       <form onSubmit={handleAdd}>
         <input
           type="text"
