@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { databases } from "../appwrite/config";
+import db from "../appwrite/databases";
 
 export const Notes = () => {
   const [notes, setNotes] = useState([]);
@@ -10,10 +11,13 @@ export const Notes = () => {
 
   const init = async () => {
     //listDocuments used to make request with database
-    const response = await databases.listDocuments(
-      import.meta.env.VITE_DATABASE_ID,
-      import.meta.env.VITE_COLLECTION_ID_NOTE
-    );
+    // const response = await databases.listDocuments(
+    //   import.meta.env.VITE_DATABASE_ID,
+    //   import.meta.env.VITE_COLLECTION_ID_NOTE
+    // );
+    // using db to organize things better
+    const response = await db.notes.list();
+
     setNotes(response.documents);
   };
 
