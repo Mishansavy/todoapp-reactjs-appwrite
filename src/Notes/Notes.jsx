@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { databases } from "../appwrite/config";
 import db from "../appwrite/databases";
+import NoteForm from "../components/NoteForm";
 
 export const Notes = () => {
   const [notes, setNotes] = useState([]);
@@ -23,6 +24,9 @@ export const Notes = () => {
 
   return (
     <div>
+      <div className="formComponent">
+        <NoteForm setNotes={setNotes} />
+      </div>
       <div>
         {notes.map((notes) => (
           <div key={notes.$id}>
